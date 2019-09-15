@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/design.css">
+</head>
+<body>
+	<!-- main div-->
+	<div id="calculator">
+		<form>
+			<!--Display window-->
+			<input type="text" id="display" disabled="disabled"><br>
+			
+			<!--First Row-->
+			<input type="button" value="C" id="keys" onclick="addtoscreen('c')">
+			<input type="button" value="<--" id="keys" onclick="backspace()">
+			<input type="button" value="X^3" id="keys" onclick="power(3)">
+			<input type="button" value="+" id="keys" onclick="addtoscreen('+')"><br>
+			
+			<!--Second Row-->
+			<input type="button" value="9" id="keys" onclick="addtoscreen('9')">
+			<input type="button" value="8" id="keys" onclick="addtoscreen('8')">
+			<input type="button" value="7" id="keys" onclick="addtoscreen('7')">
+			<input type="button" value="-" id="keys" onclick="addtoscreen('-')"><br>
+			
+			<!--Third Row-->
+			<input type="button" value="6" id="keys" onclick="addtoscreen('6')">
+			<input type="button" value="5" id="keys" onclick="addtoscreen('5')">
+			<input type="button" value="4" id="keys" onclick="addtoscreen('4')">
+			<input type="button" value="*" id="keys" onclick="addtoscreen('*')"><br>
+			
+			<!--Fourth Row-->
+			<input type="button" value="3" id="keys" onclick="addtoscreen('3')">
+			<input type="button" value="2" id="keys" onclick="addtoscreen('2')">
+			<input type="button" value="1" id="keys" onclick="addtoscreen('1')">
+			<input type="button" value="/" id="keys" onclick="addtoscreen('/')"><br>
+			
+			<!--Fifth Row-->
+			<input type="button" value="0" id="keys" onclick="addtoscreen('0')">
+			<input type="button" value="." id="keys" onclick="addtoscreen('.')">
+			<input type="button" value="=" id="equal" onclick="answer()">
+	</div>
+		
+		<!--connect Js-->
+	<script src="js/logic.js" type="text/javascript"></script>
+</body>
+</html>
