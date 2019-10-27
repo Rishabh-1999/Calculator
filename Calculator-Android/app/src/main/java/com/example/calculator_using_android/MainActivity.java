@@ -18,8 +18,8 @@ import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText inputtext;
-    private TextView resulttext;
+    private EditText input_text;
+    private TextView result_text;
     private Button but0;
     private Button but1;
     private Button but2;
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        inputtext = findViewById(R.id.input);
-        resulttext = findViewById(R.id.result);
+        input_text = findViewById(R.id.input);
+        result_text = findViewById(R.id.result);
         but0 = findViewById(R.id.but0);
         but1 = findViewById(R.id.but1);
         but2 = findViewById(R.id.but2);
@@ -97,8 +97,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         butsing.setOnClickListener(this);
         butbra.setOnClickListener(this);
 
-        inputtext.setRawInputType(InputType.TYPE_NULL);
-        inputtext.addTextChangedListener(textWatcher);
+        input_text.setRawInputType(InputType.TYPE_NULL);
+        input_text.addTextChangedListener(textWatcher);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setIcon(R.mipmap.ic_launcher_round);
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         butdelet.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                inputtext.setText("");
+                input_text.setText("");
                 return false;
             }
         });
@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void appendsing(String str,int index) {
-        inputtext.getText().replace(index,index+1,str);
+        input_text.getText().replace(index,index+1,str);
     }
 
     private void bracket() {
@@ -282,7 +282,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void replace(String str) {
-        inputtext.getText().replace(getinput().length() - 1, getinput().length(), str);
+        input_text.getText().replace(getinput().length() - 1, getinput().length(), str);
     }
 
     //Function to clear everything
@@ -290,23 +290,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lastDot = false;
         isNumber = false;
         stateError = false;
-        inputtext.getText().clear();
+        input_text.getText().clear();
     }
 
     // Function to add char to string
     private void appendToLast(String str) {
-        this.inputtext.getText().append(str);
+        this.input_text.getText().append(str);
     }
 
     private void delete() {
         if (!isEmpty()) {
-            this.inputtext.getText().delete(getinput().length() - 1, getinput().length());
+            this.input_text.getText().delete(getinput().length() - 1, getinput().length());
 
         } else clearEverything();
     }
 
     private String getinput() {
-        return this.inputtext.getText().toString();
+        return this.input_text.getText().toString();
     }
 
     private boolean isEmpty() {
@@ -327,11 +327,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Expression expression = new ExpressionBuilder(input).build();
                 double result = expression.evaluate();
                 if (isequlclick) {
-                    inputtext.setText(String.valueOf(result));
-                    resulttext.setText("");
+                    input_text.setText(String.valueOf(result));
+                    result_text.setText("");
                 } else
-                    resulttext.setText(String.valueOf(result));
-            } else resulttext.setText("");
+                    result_text.setText(String.valueOf(result));
+            } else result_text.setText("");
         } catch (Exception e) {
             stateError = true;
             isNumber = false;
@@ -358,7 +358,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Exit");
         builder.setMessage("Are You Sure?");
-
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
@@ -366,7 +365,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 System.exit(0);
             }
         });
-
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

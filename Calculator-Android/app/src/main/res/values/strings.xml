@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Calculator_Using_Android</string>
+    <string name="equal_string">=</string>
+    <string name="plusorminus_string">+/-</string>
+    <string name="zero_string">0</string>
+    <string name="dot_string">.</string>
+    <string name="three_string">3</string>
+    <string name="plus_string">+</string>
+    <string name="six_string">6</string>
+    <string name="two_string">2</string>
+    <string name="five_string">5</string>
+    <string name="minus_string">-</string>
+    <string name="one_string">1</string>
+    <string name="seven_string">7</string>
+    <string name="mult_string">x</string>
+    <string name="four_string">4</string>
+    <string name="eight_string">8</string>
+    <string name="nine_string">9</string>
+    <string name="clear_string">C</string>
+    <string name="divide_string">÷</string>
+    <string name="bracket_string">( )</string>
+    <string name="minus_button_desc">minus_button</string>
+    <string name="percentage_string">%</string>
+    <string name="plus_button_desc">plus_button</string>
+    <string name="backspace_image_desc">Backspace Image</string>
+    <string name="mult_image_desc">Mult Image</string>
 </resources>
